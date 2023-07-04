@@ -8,8 +8,8 @@ def getFtpPublishProfile(def publishProfilesJson) {
 }
 
 node {
-  withEnv(['AZURE_SUBSCRIPTION_ID= Azure subscription 1',
-        'AZURE_TENANT_ID= 2443ceab-fa14-4c8-a199-c9184de12a5b']) {
+  withEnv(['AZURE_SUBSCRIPTION_ID= 042819fc-7b38-42d4-8080-df4ff670eae6',
+        'AZURE_TENANT_ID= 2443ceab-fa14-4fc8-a199-c9184de12a5b']) {
     stage('init') {
       checkout scm
     }
@@ -20,7 +20,7 @@ node {
   
     stage('deploy') {
       def resourceGroup = '<MYFIRST>'
-      def webAppName = '<Jenkinpipe>'
+      def webAppName = '<azureteja>'
       // login Azure
       withCredentials([usernamePassword(credentialsId: '<service_princial>', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
        sh '''
