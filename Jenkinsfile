@@ -19,10 +19,10 @@ node {
     }
   
     stage('deploy') {
-      def resourceGroup = 'MYFIRST'
-      def webAppName = 'Jenkinpipe'
+      def resourceGroup = '<MYFIRST>'
+      def webAppName = '<Jenkinpipe>'
       // login Azure
-      withCredentials([usernamePassword(credentialsId: 'ca42404b-3636-493e-8153-cea02f9ea46b', passwordVariable: 'ca42404b-3636-493e-8153-cea02f9ea46b', usernameVariable: 'jenkinpipe')]) {
+      withCredentials([usernamePassword(credentialsId: '<ca42404b-3636-493e-8153-cea02f9ea46b>', passwordVariable: '<ca42404b-3636-493e-8153-cea02f9ea46b>', usernameVariable: '<jenkinpipe>')]) {
        sh '''
           az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
           az account set -s $AZURE_SUBSCRIPTION_ID
